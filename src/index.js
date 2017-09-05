@@ -9,16 +9,16 @@ const API_KEY = 'AIzaSyCbfo0hs03J3FR5n_1BVK0vE8MSlmy4O5c';
 
 // Create a new component. This component should produce some HTML
 class App extends Component {
-constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
 
-    this.state = { 
-        videos: [],
-        selectedVideo: null 
-    };
+        this.state = { 
+            videos: [],
+            selectedVideo: null 
+        };
 
-    this.videoSearch('surfboard')
-}
+        this.videoSearch('surfboard')
+    }
 
     videoSearch(term) {
         YTSearch({key: API_KEY, term: term}, (videos) => {
@@ -31,7 +31,7 @@ constructor(props) {
     }
 
     render() {
-const videoSearch = _.debounce((term) => {this.videoSearch(term) }, 300);
+        const videoSearch = _.debounce((term) => {this.videoSearch(term) }, 300);
 
         return (
             <div>
